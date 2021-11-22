@@ -374,24 +374,11 @@
      <attribute name="title">
       <string>Rescale Intensity</string>
      </attribute>
-     <widget class="QLabel" name="intensityImageBox">
+     <widget class="QPushButton" name="rescaleIntensityBtn">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>10</y>
-        <width>781</width>
-        <height>491</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="intensityBtn">
-      <property name="geometry">
-       <rect>
-        <x>730</x>
-        <y>550</y>
+        <x>340</x>
+        <y>370</y>
         <width>221</width>
         <height>31</height>
        </rect>
@@ -400,155 +387,262 @@
        <string>Rescale Intensity</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox">
+     <widget class="QLineEdit" name="rescaleMinInput">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>430</y>
-        <width>42</width>
-        <height>22</height>
+        <x>210</x>
+        <y>150</y>
+        <width>81</width>
+        <height>21</height>
        </rect>
       </property>
      </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>570</y>
-        <width>55</width>
-        <height>16</height>
+        <x>166</x>
+        <y>142</y>
+        <width>81</width>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
       </property>
       <property name="text">
        <string>Min:</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="rescaleMaxInput">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>150</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>140</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>15</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Max:</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="morphologicalOptsTab">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <attribute name="title">
       <string>Morphlogical Operations</string>
      </attribute>
-     <widget class="QWidget" name="verticalLayoutWidget_3">
+     <widget class="QPushButton" name="binaryErosionBtn">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
-        <x>700</x>
-        <y>10</y>
-        <width>110</width>
-        <height>441</height>
+        <x>10</x>
+        <y>6</y>
+        <width>1019</width>
+        <height>65</height>
        </rect>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
-       <item>
-        <widget class="QPushButton" name="pushButton_17">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_18">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_19">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QWidget" name="verticalLayoutWidget_4">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>110</width>
-        <height>441</height>
-       </rect>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
-       <item>
-        <widget class="QPushButton" name="pushButton_20">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_21">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_22">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QFrame" name="frame_3">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>10</y>
-        <width>591</width>
-        <height>441</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
+      <property name="text">
+       <string>Binary Erosion</string>
       </property>
      </widget>
-     <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <widget class="QPushButton" name="floodFillBtn">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>460</y>
-        <width>791</width>
-        <height>80</height>
+        <x>10</x>
+        <y>570</y>
+        <width>1019</width>
+        <height>65</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QPushButton" name="pushButton_23">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_24">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_25">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="pushButton_26">
-         <property name="text">
-          <string>PushButton</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Flood Fill</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="areaOpeningBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>359</y>
+        <width>1019</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Area Opening</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skeletonizeBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>288</y>
+        <width>1019</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Skeletonize</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="whiteTopHatBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>77</y>
+        <width>1019</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>White Top Hat</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="openingBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>147</y>
+        <width>1019</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Opening</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="binaryDilationBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>429</y>
+        <width>1019</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Binary Dilation</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="medialAxisBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>218</y>
+        <width>1019</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Medial Axis</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="localMaximaBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>641</y>
+        <width>1019</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Local Maxima</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="diameterOpeningBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>500</y>
+        <width>1019</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>1</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Diameter Opening</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="videoProcessingTab">
