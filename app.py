@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, uic
 import sys
 import os
 from file_operations import FileOperations
+from histogram_equalization import HistogramEqualization
 from image_enhancement import ImageEnhancement
 from rescale_intensity import RescaleIntensity
 from morphological_operations import MorphologicalOperations
@@ -26,6 +27,9 @@ class Ui(QtWidgets.QMainWindow):
         # Morphological Operations elements
         MorphologicalOperations.render(self)
 
+        #Histogram Equalizatiom elements
+        HistogramEqualization.render(self)
+        
         self.show()
 
 
