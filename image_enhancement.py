@@ -3,16 +3,18 @@ import numpy as np
 from matplotlib import pyplot as plt
 from PyQt5 import QtWidgets
 from skimage import filters
-
+from skimage import io
 
 class ImageEnhancement():
     def render(self):
-        # Canny Effect Button
+       #ToDo: canny buton adını değiştir
+
+        #Frangi Effect Button
         self.cannyBtn = self.findChild(
             QtWidgets.QPushButton, 'cannyBtn')
         self.cannyBtn.clicked.connect(
-            lambda: ImageEnhancement.cannyBtnClicked(self.fileName))
-
+            lambda: ImageEnhancement.frangiBtnClicked(self.fileName))
+    
         # Sobel Effect Button
         self.sobelBtn = self.findChild(
             QtWidgets.QPushButton, 'sobelBtn')
@@ -67,15 +69,12 @@ class ImageEnhancement():
         self.laplaceBtn.clicked.connect(
             lambda: ImageEnhancement.laplaceBtnClicked(self.fileName))
 
-    def cannyBtnClicked(fileName):
-        img = cv2.imread(fileName, 0)
-        edges = cv2.Canny(img, 50, 150)
 
-        plt.subplot(121), plt.imshow(img, cmap='gray')
-        plt.title('Orjinal'), plt.xticks([]), plt.yticks([])
-        plt.subplot(122), plt.imshow(edges, cmap='gray')
-        plt.title('Canny'), plt.xticks([]), plt.yticks([])
-
+    def frangiBtnClicked(fileName):
+        image = io.imread(fileName)
+        plt.imshow(filters.frangi(image), cmap=plt.cm.gray)
+        plt.title('Frangi filter result')
+        plt.tight_layout()
         plt.show()
 
     def sobelBtnClicked(fileName):
@@ -86,7 +85,7 @@ class ImageEnhancement():
     def medianBtnClicked(fileName):
         image = cv2.imread(fileName)
         effectedImage = cv2.medianBlur(image, 3)
-        cv2.imshow("median dilter", effectedImage)
+        cv2.imshow("median filter", effectedImage)
 
     def gaussBtnClicked(fileName):
         image = cv2.imread(fileName)
@@ -137,9 +136,10 @@ class ImageEnhancement():
         plt.show()
 
     def heisanBtnClicked(fileName):
-        image = cv2.imread(fileName, 0)
-        hesian = filters.hessian(image)
-        plt.imshow(hesian)
+        image = io.imread(fileName)
+        plt.imshow(filters.hessian(image), cmap=plt.cm.gray)
+        plt.title('Hessian filter result')
+        plt.tight_layout()
         plt.show()
 
     def laplaceBtnClicked(fileName):
