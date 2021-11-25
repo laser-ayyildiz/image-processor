@@ -5,16 +5,15 @@ from PyQt5 import QtWidgets
 from skimage import filters
 from skimage import io
 
+
 class ImageEnhancement():
     def render(self):
-       #ToDo: canny buton adını değiştir
-
-        #Frangi Effect Button
-        self.cannyBtn = self.findChild(
-            QtWidgets.QPushButton, 'cannyBtn')
-        self.cannyBtn.clicked.connect(
+        # Frangi Effect Button
+        self.frangiBtn = self.findChild(
+            QtWidgets.QPushButton, 'frangiBtn')
+        self.frangiBtn.clicked.connect(
             lambda: ImageEnhancement.frangiBtnClicked(self.fileName))
-    
+
         # Sobel Effect Button
         self.sobelBtn = self.findChild(
             QtWidgets.QPushButton, 'sobelBtn')
@@ -68,7 +67,6 @@ class ImageEnhancement():
             QtWidgets.QPushButton, 'laplaceBtn')
         self.laplaceBtn.clicked.connect(
             lambda: ImageEnhancement.laplaceBtnClicked(self.fileName))
-
 
     def frangiBtnClicked(fileName):
         image = io.imread(fileName)

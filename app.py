@@ -2,10 +2,12 @@ from PyQt5 import QtWidgets, uic
 import sys
 import os
 from file_operations import FileOperations
-from histogram_equalization import HistogramEqualization
+from histogram import Histogram
 from image_enhancement import ImageEnhancement
 from rescale_intensity import RescaleIntensity
 from morphological_operations import MorphologicalOperations
+from transform import Transform
+from video_edge_detect import VideoEdgeDetect
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -27,9 +29,14 @@ class Ui(QtWidgets.QMainWindow):
         # Morphological Operations elements
         MorphologicalOperations.render(self)
 
-        #Histogram Equalizatiom elements
-        HistogramEqualization.render(self)
-        
+        # Histogram Equalizatiom elements
+        Histogram.render(self)
+
+        # Transform elements
+        Transform.render(self)
+
+        VideoEdgeDetect.render(self)
+
         self.show()
 
 

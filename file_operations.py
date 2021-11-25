@@ -24,6 +24,6 @@ class FileOperations():
         pixmap = QPixmap(self.fileName)
         self.fileOptTab_imageBox.setPixmap(pixmap)
         self.imageEnchTab.setEnabled(True)
-        self.cannyBtn.setEnabled(True)
+        self.frangiBtn.setEnabled(True)
         self.morphologicalOptsTab.setEnabled(True)
         self.binaryErosionBtn.setEnabled(True)
