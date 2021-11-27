@@ -2,6 +2,7 @@
 from PyQt5 import QtWidgets
 import cv2
 
+
 class VideoEdgeDetect():
     def render(self):
         # detectEdgesBtn

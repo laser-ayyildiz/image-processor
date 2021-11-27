@@ -38,6 +38,19 @@ class Transform():
         self.rotateDegreeInput = self.findChild(
             QtWidgets.QLineEdit, 'rotateDegreeInput')
 
+        self.rotateDegreeInput = self.findChild(
+            QtWidgets.QLineEdit, 'rotateDegreeInput')
+
+        self.mirrorHorizontalBtn = self.findChild(
+            QtWidgets.QPushButton, 'mirrorHorizontalBtn')
+        self.mirrorHorizontalBtn.clicked.connect(
+            lambda: Transform.mirrorHorizontalBtnClicked(self.fileName))
+
+        self.mirrorVeticalBtn = self.findChild(
+            QtWidgets.QPushButton, 'mirrorVeticalBtn')
+        self.mirrorVeticalBtn.clicked.connect(
+            lambda: Transform.mirrorVeticalBtnClicked(self.fileName))
+
         self.swirlBtn = self.findChild(
             QtWidgets.QPushButton, 'swirlBtn')
         self.swirlBtn.clicked.connect(
@@ -99,3 +112,17 @@ class Transform():
 
         imshow(swirledImage)
         plt.show()
+
+    def mirrorHorizontalBtnClicked(fileName):
+        image = cv2.imread(fileName)
+        image_mirror_h = np.fliplr(image)
+        cv2.imshow("horizontal", image_mirror_h)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+
+    def mirrorVeticalBtnClicked(fileName):
+        image = cv2.imread(fileName)
+        image_mirror_v = np.flipud(image)
+        cv2.imshow("vertical", image_mirror_v)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()

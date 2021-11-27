@@ -69,7 +69,10 @@ class MorphologicalOperations():
             lambda: MorphologicalOperations.localMaximaBtnClicked(self.fileName))
 
     def binaryErosionBtnClicked(fileName):
-        image = cv2.imread(fileName, 0)
+        image = cv2.imread(fileName, 2)
+        ret, bw_img = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+        # converting to its binary form
+        bw = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
         filteredImage = morphology.binary_erosion(image)
         plt.imshow(filteredImage)
         plt.show()
@@ -105,8 +108,9 @@ class MorphologicalOperations():
         plt.show()
 
     def binaryDilationBtnClicked(fileName):
-        image = cv2.imread(fileName, 0)
-        filteredImage = morphology.binary_dilation(image)
+        image = cv2.imread(fileName, 2)
+        ret, bw_img = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+        filteredImage = morphology.binary_dilation(bw_img)
         plt.imshow(filteredImage)
         plt.show()
 
@@ -117,8 +121,9 @@ class MorphologicalOperations():
         plt.show()
 
     def floodFillBtnClicked(fileName):
-        image = cv2.imread(fileName, 0)
-        filteredImage = morphology.flood_fill(image, (4, 2), 3)
+        image = cv2.imread(fileName, 2)
+        ret, bw_img = cv2.threshold(image, 127, 255, cv2.THRESH_BINARY)
+        filteredImage = morphology.flood_fill(bw_img, (4, 2), 3)
         plt.imshow(filteredImage)
         plt.show()
 
